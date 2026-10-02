@@ -34,8 +34,8 @@ function BorrowPage() {
 
   async function submit(e: FormEvent) {
     e.preventDefault();
-    if (!title.trim()) return toast.error("Please enter a book title");
-    if (due < borrowedAt) return toast.error("Due date must be after the borrow date");
+    if (!title.trim()) { toast.error("Please enter a book title"); return; }
+    if (due < borrowedAt) { toast.error("Due date must be after the borrow date"); return; }
     setBusy(true);
     const { error } = await supabase.from("borrowings").insert({
       user_id: user.id,
@@ -45,7 +45,7 @@ function BorrowPage() {
       due_date: due,
     });
     setBusy(false);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success(`"${title}" recorded`);
     qc.invalidateQueries();
     navigate({ to: "/members/$userId", params: { userId: user.id } });

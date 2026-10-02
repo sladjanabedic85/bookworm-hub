@@ -39,12 +39,12 @@ function MemberDetail() {
 
   async function toggleReturned(id: string, returned: boolean) {
     const { error } = await supabase.from("borrowings").update({ returned: !returned }).eq("id", id);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     qc.invalidateQueries();
   }
   async function remove(id: string) {
     const { error } = await supabase.from("borrowings").delete().eq("id", id);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success("Loan removed");
     qc.invalidateQueries();
   }
