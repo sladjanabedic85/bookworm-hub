@@ -1,64 +1,134 @@
 # Bookworm Hub
 
-Create a React Library book borrowing application.
+Bookworm Hub is a modern and responsive library book borrowing application built with React and Supabase.
 
-The application should be in English and have a modern, clean, responsive design.
+The application allows users to register, log in, manage their book borrowings, browse library members, and view books borrowed by individual users.
 
-An application should include:
+# Live Demo
 
-user registration, use supabase authentication
+Live application:
+https://book-buddy-central-39.lovable.app/
 
-user login, user logout funcionality
+Features
 
-form for borrowed books, 
+User registration
 
-a page showing all users,
+User login and logout
 
-the possibility to click on the user's name to display the list of books borrowed by that user.
+Supabase authentication
 
-The application should contain at least three pages, for example:
+Add new book borrowings
 
-home page,
+View borrowed books
 
-data entry page,
+View all registered members
 
-page for displaying users and borrowed books, 
+View books borrowed by a selected member
 
-The application should include navigation between pages.
+User-specific borrowing management
 
-The application should contain at least one data entry form.
+Responsive design
 
-Data entered through the form should be stored in the Supabase database.
+Supabase database integration
 
-The application should display data from the database on a separate page.
+Row Level Security (RLS)
 
-It is necessary to enable the display of details for one selected record. For example, in a library application, clicking on a user's name displays a list of books that the user has borrowed.
+# Technologies
 
-The application should contain basic user authentication:
+React
 
-registration,
+TypeScript
 
-logging in,
+Supabase
 
-user logout.
+Supabase Auth
 
-This project was built with [Lovable](https://lovable.dev).
+PostgreSQL
 
-## Build with Lovable
+Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/2ebacfd4-343a-4cee-8bd9-505c503762c7).
+Git & GitHub
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+# Database
 
-## Development
+The application uses Supabase for data storage and authentication.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+The main database tables are:
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+profiles
+
+Stores information about registered users.
+
+id
+
+full_name
+
+email
+
+created_at
+
+borrowings
+
+Stores information about borrowed books.
+
+id
+
+user_id
+
+book_title
+
+author
+
+borrowed_at
+
+due_date
+
+returned
+
+created_at
+
+# Authentication & Security
+
+Authentication is handled using Supabase Auth.
+
+Row Level Security (RLS) policies ensure that:
+
+Authenticated users can view members and borrowings.
+
+Users can create, update and delete only their own borrowings.
+
+Users can update only their own profile.
+
+# Development with Lovable
+
+The application was developed with the assistance of Lovable.
+
+The main prompts used during development are documented in:
+
+PROMPTS.md
+
+This file shows the development process, including the initial application requirements, Supabase database structure, authentication, permissions and application behavior.
+
+# Run Locally
+
+Clone the repository:
+
+git clone https://github.com/sladjanabedic85/bookworm-hub.git
+
+Navigate to the project directory:
+
+cd bookworm-hub
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
 npm run dev
-```
+
+# Author
+
+Sladjana Bedic
+
+GitHub: https://github.com/sladjanabedic85
