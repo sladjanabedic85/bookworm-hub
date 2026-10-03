@@ -3,7 +3,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { BookOpen, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabase";
 
 const linkCls = "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground";
 const activeCls = { className: "rounded-md px-3 py-2 text-sm font-semibold text-foreground bg-secondary" };

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ChevronRight } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabase";
 
 export const Route = createFileRoute("/_authenticated/members/")({
   head: () => ({
