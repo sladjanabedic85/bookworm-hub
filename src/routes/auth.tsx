@@ -29,7 +29,7 @@ function AuthPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) navigate({ to: "/members" });
+    if (user) navigate({ to: "/" });
   }, [user, navigate]);
 
   async function submit(e: FormEvent) {
