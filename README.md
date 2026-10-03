@@ -39,6 +39,12 @@ React
 
 TypeScript
 
+TanStack
+
+Vite
+
+Tailwind CSS
+
 Supabase
 
 Supabase Auth
